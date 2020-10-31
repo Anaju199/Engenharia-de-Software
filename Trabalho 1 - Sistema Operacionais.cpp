@@ -68,10 +68,7 @@ int main(){
     for(int a;a<tamP;a++){
             cout<<vetPalavras[a]<<endl;
     }
-    //Salva a quantidade de linhas n
-    /*  stringstream ss(vetPalavras[0]);
-    ss >> n;
-    */
+    
         n = converte(vetPalavras[0]);
 
     for(int i=1;i<tamP;i+=3){
@@ -133,7 +130,6 @@ matrizFinal[0][0] = total;
         Ttotal+=(*it).s;
         lista.sort(comparaS);
 
-
 	}
 
 
@@ -147,6 +143,7 @@ matrizFinal[0][0] = total;
 cout<<endl<<Ttotal;
 matrizFinal[2][0] = total;
 matrizFinal[2][1] = matrizFinal[2][0];
+
     RRQ5 = funcaoRRQ5(lista);
     matrizFinal[3][0]=RRQ5.espe;
     matrizFinal[3][1]=RRQ5.respo;
