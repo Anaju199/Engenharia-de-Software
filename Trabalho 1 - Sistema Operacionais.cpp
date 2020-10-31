@@ -68,10 +68,7 @@ int main(){
     for(int a;a<tamP;a++){
             cout<<vetPalavras[a]<<endl;
     }
-    //Salva a quantidade de linhas n
-    /*  stringstream ss(vetPalavras[0]);
-    ss >> n;
-    */
+    
         n = converte(vetPalavras[0]);
 
     for(int i=1;i<tamP;i+=3){
@@ -100,33 +97,7 @@ int main(){
     cout<<"**************************************************************"<<endl;
 
 
-        /*
-	for(int i=0;i<5;i++){
-		lista.push_back(i);
-	}
-	for(int i=5;i<10;i++){
-		lista.push_front(i);
-	}
-    // Conteudo da lista: 9 8 7 6 5 0 1 2 3 4*/
-
-    //apaga o primeiro termo
-    /*  it = lista.begin();
-        lista.erase(it);*/
-
-
-    cout <<" comeco:"<< lista.front().p << endl;
-    //printa 9 na tela
-    cout<<"**************************************************************"<<endl;
-    cout <<" fim:"<< lista.back().p << endl;
-    // printa 4 na tela
-    cout<<"**************************************************************"<<endl;
-    cout <<" tamanho:"<< lista.size()<< endl;
-    //printa o tamanho da lista na tela, que é igual a 10
-    cout<<"**************************************************************"<<endl;
-
-
-
-    // exibe um  coluna especifica  da lista
+      
 	for(it = lista.begin(); it!=lista.end();it++){
 
         cout<< (*it).p << endl;
@@ -151,8 +122,7 @@ int main(){
 	for(it = lista.begin(); it!=lista.end();it++){
         total=total+Ttotal-(*it).c;
         Ttotal+=(*it).s;
-	/*cout<<endl<<total;
-    cout<<endl<<Ttotal;*/
+	
 
 	}
 
@@ -179,9 +149,7 @@ cout<<endl<<"**************************************************************"<<en
         total=total+Ttotal-(*it).c;
         Ttotal+=(*it).s;
         lista.sort(comparaS);
-	/*cout<<endl<<"total"<<total;
-    cout<<endl<<"Ttotal"<<Ttotal;*/
-
+	
 
 	}
 
@@ -197,108 +165,6 @@ cout<<endl<<Ttotal;
 matrizFinal[2][0] = total;
 matrizFinal[2][1] = matrizFinal[2][0];
 cout<<endl<<"**************************************************************"<<endl;
-/*
-j=0;
-for(int i=1;i<=Ttotal+1;i++){
-
-
-        if((i==lista.front().c)&&(lista.size()>0)){
-
-               it= lista.begin();
-
-            listaAux.push_back((*it));
-            listaAux.sort(comparaP);
-            it= lista.begin();
-            lista.erase(it);
-            listaAux.sort(comparaP);
-
-        }
-        if((listaAux.front().s>=1)&&(listaAux.size()>0)){
-            aux.p =listaAux.front().p ;
-            aux.c =listaAux.front().c;
-            aux.s =listaAux.front().s-1;
-            aux.t=listaAux.front().t+1;
-                if(aux.fim==0){
-                    aux.fim=listaAux.front().c+1;
-                }else{
-                    aux.fim++;
-                }
-                if((aux.com==0)||(listaAux.front().t==1)){
-                    aux.com=i;
-                    j++;
-                }
-        it= listaAux.begin();
-        listaAux.erase(it);
-        int m=0;
-        m=listaAux.front().t;
-               if(aux.com==0){
-                    aux.com=i;
-               }
-               else if(m==1){
-                    aux.com=i;
-                }
-
-            listaAux.push_back(aux);
-
-        }
-        if((listaAux.front().s==0)&&(listaAux.size()>=0)){
-
-            it=listaAux.begin();
-            listaAux.erase(it);
-            lista1.push_back((*it));
-
-
-        }
-
-        listaAux.sort(comparaP);
-
-
-            }//termino do for
-
-              total=0;
-         for(it = lista1.begin(); it!=lista1.end();it++){
-
-            total+=((*it).com-(*it).c);
-        }
-        total=total/3;
-        cout<<"Ttotal"<<total<<endl;
-
-
-    cout<<endl<<"**************************************************************"<<endl;
-    cout<<"i:"<<i<<endl;
-	cout <<" listaAux:"<< lista1.size()<< endl;
-	for(it = lista1.begin(); it!=lista1.end();it++){
-
-        cout<< (*it).p << " "<< (*it).c << " "<<(*it).s <<" "<<(*it).t <<endl;
-	}
-	cout <<" tamanho:"<< lista1.size()<< endl;
-	cout<<endl<<"**************************************************************"<<endl;
-
-		cout<<endl<<"**************************************************************"<<endl;
-	cout <<" listaAux:"<< listaAux.size()<< endl;
-	for(it = listaAux.begin(); it!=listaAux.end();it++){
-
-        cout<< (*it).p << " "<< (*it).c << " "<<(*it).s <<" "<<(*it).t <<endl;
-	}
-	cout <<" tamanho:"<< listaAux.size()<< endl;
-	cout<<endl<<"**************************************************************"<<endl;
-
-
-		cout<<endl<<"**************************************************************"<<endl;
-	cout <<" lista:"<< lista1.size()<< endl;
-	for(it = lista1.begin(); it!=lista1.end();it++){
-
-        cout<< (*it).p << " "<< (*it).c << " "<<(*it).s <<" "<<(*it).t <<" "<<(*it).com <<" "<<(*it).fim<<endl;
-	}
-	cout <<" tamanho:"<< lista1.size()<< endl;
-	cout<<endl<<"**************************************************************"<<endl;
-	// limpa a lista inteira
-    lista.clear();
-    // printará 0 pois a lista está vazia
-	cout <<" tamanho:"<< lista.size()<< endl;
-	cout<<"Ttotal"<<total<<endl;
-
-*/
     RRQ5 = funcaoRRQ5(lista);
     matrizFinal[3][0]=RRQ5.espe;
     matrizFinal[3][1]=RRQ5.respo;
