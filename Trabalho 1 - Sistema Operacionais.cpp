@@ -95,23 +95,6 @@ int main(){
 	}
 
     cout<<"**************************************************************"<<endl;
-
-
-      
-	for(it = lista.begin(); it!=lista.end();it++){
-
-        cout<< (*it).p << endl;
-	}
-		cout<<endl<<"**************************************************************"<<endl;
-	cout <<" listaAux:"<< lista.size()<< endl;
-	for(it = listaAux.begin(); it!=listaAux.end();it++){
-
-        cout<< (*it).p << " "<< (*it).c << " "<<(*it).s <<" "<<(*it).t <<endl;
-	}
-
-	cout<<endl<<"**************************************************************"<<endl;
-	// ordena o lista.sort e o for  exibe   o valor
-	cout<<endl<<"**************************************************************"<<endl;
 	lista.sort(comparaC);
 	for(it = lista.begin(); it!=lista.end();it++){
 
@@ -133,15 +116,12 @@ int main(){
     cout <<fixed << total;
 
 
-	cout<<"FIFO? "<<endl<<total;
+	cout<<"FIFO "<<endl<<total;
 cout<<endl<<Ttotal;
 
 matrizFinal[0][0] = total;
     matrizFinal[0][1] = matrizFinal[0][0];
 
-cout<<endl<<"**************************************************************"<<endl;
-
-	cout<<endl<<"**************************************************************"<<endl;
 	lista.sort(comparaC);
 	Ttotal=lista.front().c;
 	total=0;
@@ -149,7 +129,6 @@ cout<<endl<<"**************************************************************"<<en
         total=total+Ttotal-(*it).c;
         Ttotal+=(*it).s;
         lista.sort(comparaS);
-	
 
 	}
 
@@ -164,7 +143,7 @@ cout<<endl<<"**************************************************************"<<en
 cout<<endl<<Ttotal;
 matrizFinal[2][0] = total;
 matrizFinal[2][1] = matrizFinal[2][0];
-cout<<endl<<"**************************************************************"<<endl;
+
     RRQ5 = funcaoRRQ5(lista);
     matrizFinal[3][0]=RRQ5.espe;
     matrizFinal[3][1]=RRQ5.respo;
