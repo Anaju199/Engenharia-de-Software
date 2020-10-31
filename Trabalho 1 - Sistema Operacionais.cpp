@@ -20,10 +20,10 @@ using namespace std;
         struct registro {
           int p; //prioridade do processo
           int c; //o instante de chegada do processo
-          int s; //o tempo de serviço do processo
+          int s; //o tempo de serviÃ§o do processo
           int esp=-1; //variavel para somar o tempo de espera
           int resp=-1; //somar o tempo resposta
-          int t; //tempo de serviço
+          int t; //tempo de serviÃ§o
           int com;
           int fim;
         };
@@ -62,21 +62,7 @@ int main(){
 
     nome="Teste.txt";
         //Ler arquivo
-         ifstream ler(nome);
-         int i=0;
-         while(!ler.eof()){
-            ler.getline(linha,Max);
-            vetLinhas[tamL] = linha;
-            tamL++;
-            palavra = strtok(linha, (" "));
-            while(palavra!=nullptr){
-                    vetPalavras[i]=palavra;
-                    i++;
-                    palavra = strtok(NULL, (" "));
-            }
-          //  vetPalavras[i]=";";
-          //  i++;
-        }
+        tamP=lerArquivo(nome);
         tamP=i;
 
     for(int a;a<tamP;a++){
@@ -107,7 +93,7 @@ int main(){
         fila.pop();
 
 		if(fila.empty()){
-			cout << "Vazio na iteração " << i+1 << endl;
+			cout << "Vazio na iteraÃ§Ã£o " << i+1 << endl;
 		}
 	}
 
@@ -135,7 +121,7 @@ int main(){
     // printa 4 na tela
     cout<<"**************************************************************"<<endl;
     cout <<" tamanho:"<< lista.size()<< endl;
-    //printa o tamanho da lista na tela, que é igual a 10
+    //printa o tamanho da lista na tela, que Ã© igual a 10
     cout<<"**************************************************************"<<endl;
 
 
@@ -308,7 +294,7 @@ for(int i=1;i<=Ttotal+1;i++){
 	cout<<endl<<"**************************************************************"<<endl;
 	// limpa a lista inteira
     lista.clear();
-    // printará 0 pois a lista está vazia
+    // printarÃ¡ 0 pois a lista estÃ¡ vazia
 	cout <<" tamanho:"<< lista.size()<< endl;
 	cout<<"Ttotal"<<total<<endl;
 
@@ -485,6 +471,25 @@ void lerArquivo(string nome, string vetor[Max]){
         }
 }
 
+int lerArquivo(string nome){
+    string   vetLinhas[Max], vetSalvar[Max];
+
+  ifstream ler(nome);
+         int i=0;
+         while(!ler.eof()){
+            ler.getline(linha,Max);
+            vetLinhas[tamL] = linha;
+            tamL++;
+            palavra = strtok(linha, (" "));
+            while(palavra!=nullptr){
+                    vetPalavras[i]=palavra;
+                    i++;
+                    palavra = strtok(NULL, (" "));
+            }
+        }
+    return i;
+}
+
 void salvarArquivo(float matrizSalv[4][2]){
         ofstream saida;
         saida.open("Resultado.txt");
@@ -497,13 +502,13 @@ void salvarArquivo(float matrizSalv[4][2]){
         cout<<"Resposta salva em Resultado.txt"<<endl;
 }
 
-bool comparaC(registro a, registro b){ //Função para compara Alunos
-  return a.c < b.c ; //Aluno a vem antes do Aluno b se a nota do aluno a é menor que a nota do aluno b
+bool comparaC(registro a, registro b){ //FunÃ§Ã£o para compara Alunos
+  return a.c < b.c ; //Aluno a vem antes do Aluno b se a nota do aluno a Ã© menor que a nota do aluno b
 }
-bool comparaS(registro a, registro b){ //Função para compara Alunos
-  return a.s < b.s; //Aluno a vem antes do Aluno b se a nota do aluno a é menor que a nota do aluno b
+bool comparaS(registro a, registro b){ //FunÃ§Ã£o para compara Alunos
+  return a.s < b.s; //Aluno a vem antes do Aluno b se a nota do aluno a Ã© menor que a nota do aluno b
 }
-bool comparaP(registro a, registro b){ //Função para compara Alunos
-  return a.p < b.p; //Aluno a vem antes do Aluno b se a nota do aluno a é menor que a nota do aluno b
+bool comparaP(registro a, registro b){ //FunÃ§Ã£o para compara Alunos
+  return a.p < b.p; //Aluno a vem antes do Aluno b se a nota do aluno a Ã© menor que a nota do aluno b
 }
 
